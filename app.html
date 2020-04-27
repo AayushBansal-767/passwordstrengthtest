@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Strength Tester</title>
+	<style>
+		*::before ,*::after ,*{
+			box-sizing: border-box;
+		}
+		body{
+			background-color: hsl(195, 61%, 17%);
+			color: hsl(195, 61%, 90%);
+			text-align: center;
+		}
+		.strength-meter{
+			position: relative;
+			height: 2rem;
+			width: 90%;
+			border: 3px solid hsl(195, 61%, 45%);
+			border-radius: 1rem;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.strength-meter::before{
+			content: "";
+			position: absolute;
+			left:0;
+			height: 100%;
+			width : calc(1% * var(--strength, 0));
+			background-color: hsl(195, 61%, 67%);
+			transition: width 200ms;
+
+		}
+		.password-input{
+			margin-top: 1rem;
+			
+			width: 90%;
+			padding: .25rem .75rem;
+			background-color: hsl(195, 61% , 25%);
+			color: white;
+			border: 1px solid hsl(195, 61% , 45%);
+			text-align: center;
+			border-radius: .3rem;
+			outline: none;
+		}
+		.password-input:focus{
+			border-color: hsl(195, 61% , 70%);
+		}
+		.reasons > * {
+			margin-top: .5rem;
+			color :hsl(195, 61% , 80%);
+		}
+
+	</style>
+	<script type="text/javascript" src="app.js" defer></script>
+</head>
+<body>
+	<h1>Password Strength Test</h1>
+	<div class="strength-meter" id="strength-meter"></div>
+	<input type="text" class="password-input" id="password-input" value="" placeholder="Enter your password here" name="" autofocus aria-labelledby="Password">
+	<div id="reasons" class="reasons" id="reasons">
+	</div>
+
+</body>
+</html>
