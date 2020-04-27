@@ -4,7 +4,6 @@ var reasonsContainer = document.getElementById("reasons")
 
 passwordInput.addEventListener('input',updateStrengthMeter)
 
-updateStrengthMeter()
 
 function updateStrengthMeter(){
 	var weaknesses=calculatePasswordStrength(passwordInput.value)
